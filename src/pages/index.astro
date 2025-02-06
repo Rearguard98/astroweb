@@ -9,10 +9,10 @@ import Testimonials from '~/components/widgets/Testimonials.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import { getPermalink } from '~/utils/permalinks';
-import Profile from '../assets/images/arrosyid.webp'
+import Profile from '../assets/images/arrosyid.webp';
 
 const metadata = {
-  title: 'Personal Homepage Demo',
+  title: 'Arrosyid Al Ayubi Website',
 };
 ---
 
@@ -21,12 +21,11 @@ const metadata = {
   <Fragment slot="header">
     <Header
       links={[
-        { text: 'Home', href: '/' },
-        { text: 'About', href: '#about' },
-        { text: 'Resume', href: '#resume' },
-        { text: 'Porfolio', href: '#porfolio' },
+        { text: 'Beranda', href: '/' },
+        { text: 'Tentang Saya', href: '#tentang' },
+        { text: 'Pengalaman', href: '#pengalaman' },
+        { text: 'Portfolio', href: '#portfolio' },
         { text: 'Blog', href: '#blog' },
-        { text: 'Github', href: 'https://github.com/onwidget' },
       ]}
       actions={[
         {
@@ -53,32 +52,32 @@ const metadata = {
   <!-- Content Widget **************** -->
 
   <Content
-    id="about"
-    columns={2}
+    id="tentang"
+    columns={4}
     items={[
       {
-        icon: 'tabler:brand-dribbble',
+        icon: 'tabler:brand-instagram',
         callToAction: {
           target: '_blank',
-          text: 'Dribbble',
-          href: '#',
+          text: 'Instagram',
+          href: 'https://www.instagram.com/arrosyid.a/',
         },
       },
       {
-        icon: 'tabler:brand-behance',
+        icon: 'tabler:brand-linkedin',
         callToAction: {
           target: '_blank',
-          text: 'Behance',
-          href: '#',
+          text: 'Linkedin',
+          href: 'https://www.linkedin.com/in/arrosyid-al-ayubi-b02521141/',
         },
       },
     ]}
     image={{
-      src: Profile,
-      alt: 'Arrosyid Al-Ayubi',
-      loading: 'lazy',
+      src:Profile,
+      alt:'Arrosyid Al-Ayubi',
+      loading:'lazy',
       height:'500',
-      width: '500',
+      width:'500',
     }}
   >
     <Fragment slot="content">
@@ -104,8 +103,8 @@ const metadata = {
   <!-- Steps Widget ****************** -->
 
   <Steps
-    id="resume"
-    title="Work experience"
+    id="pengalaman"
+    title="Pengalaman Bekerja"
     items={[
       {
         title:
@@ -123,26 +122,6 @@ const metadata = {
     classes={{ container: 'max-w-3xl' }}
   />
 
-  <!-- Steps Widget ****************** -->
-
-  <Steps
-    id="resume"
-    title="Education"
-    items={[
-      {
-        title: `Master of Fine Arts in Graphic Design <br /> <span class="font-normal">New York University's School of Design</span> <br /> <span class="text-sm font-normal">2018 - 2020</span>`,
-        icon: 'tabler:school',
-      },
-      {
-        title: `Bachelor of Arts in Graphic Design <br /> <span class="font-normal">New York University's School of Design</span> <br /> <span class="text-sm font-normal">2014 - 2018</span>`,
-        icon: 'tabler:school',
-      },
-    ]}
-    classes={{ container: 'max-w-3xl' }}
-  />
-
-  <!-- Features3 Widget ************** -->
-
   <Features3
     title="Skills"
     subtitle="Discover the proficiencies that allow me to bring imagination to life through design."
@@ -150,7 +129,7 @@ const metadata = {
     defaultIcon="tabler:point-filled"
     items={[
       {
-        title: 'Graphic design',
+        title: 'Desain Grafis',
         description: 'Proficient in crafting visually appealing designs that convey messages effectively.',
       },
       {
@@ -166,7 +145,7 @@ const metadata = {
         description: 'Skilled in using Photoshop, Illustrator, and InDesign to create and edit visual elements.',
       },
       {
-        title: 'Typography',
+        title: 'Tipografi',
         description: 'Adept in selecting and manipulating typefaces to enhance design aesthetics.',
       },
       {
@@ -191,7 +170,7 @@ const metadata = {
   <!-- Content Widget **************** -->
 
   <Content
-    id="porfolio"
+    id="portfolio"
     title="Elevating visual narratives"
     subtitle="Embark on a design journey that surpasses pixels, entering a realm of imagination. Explore my portfolio, where passion and creativity converge to shape enthralling visual narratives."
     isReversed

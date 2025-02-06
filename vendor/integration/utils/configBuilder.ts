@@ -153,7 +153,7 @@ const getAppBlog = (config: Config) => {
     },
     category: {
       isEnabled: true,
-      pathname: 'category',
+      pathname: 'kategori',
       robots: {
         index: true,
         follow: true,
@@ -161,7 +161,7 @@ const getAppBlog = (config: Config) => {
     },
     tag: {
       isEnabled: true,
-      pathname: 'tag',
+      pathname: 'tagar',
       robots: {
         index: false,
         follow: true,
