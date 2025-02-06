@@ -4,7 +4,7 @@ import Header from '~/components/widgets/Header.astro';
 import Footer from '~/components/widgets/Footer.astro';
 import Analytics from '@vercel/analytics/astro';
 import { headerData, footerData } from '~/navigation';
-
+import SpeedInsights from '@vercel/speed-insights/astro';
 import type { MetaData } from '~/types';
 
 export interface Props {
@@ -15,8 +15,11 @@ const { metadata } = Astro.props;
 ---
 
 <Layout metadata={metadata}>
+  <slot name="Speedinsight">
+    <SpeedInsights/>
+  </slot>
   <slot name="Analytics">
-    <Analytics/>
+    <Analytics />
   </slot>
   <slot name="header">
     <Header {...headerData} isSticky showRssFeed showToggleTheme />
