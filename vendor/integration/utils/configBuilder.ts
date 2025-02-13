@@ -120,7 +120,7 @@ const getMetadata = (config: Config) => {
 
 const getI18N = (config: Config) => {
   const _default = {
-    language: 'en',
+    language: 'id',
     textDirection: 'ltr',
   };
 
