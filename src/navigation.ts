@@ -28,7 +28,7 @@ export const headerData = {
         },
         {
           text: 'Tutorial',
-          href: getPermalink('tutorial', 'category'),
+          href: getPermalink('tutorials', 'category'),
         },
         {
           text: 'Tag Page',
