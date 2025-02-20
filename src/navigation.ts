@@ -21,16 +21,6 @@ export const headerData = {
     {
       text: 'Artikel',
       href: getBlogPermalink(),
-      links: [
-        {
-          text: 'Teknologi',
-          href: getPermalink('teknologi', 'category'),
-        },
-        {
-          text: 'Desain',
-          href: getPermalink('desain', 'category'),
-        },
-      ],
     },
   ],
 };
