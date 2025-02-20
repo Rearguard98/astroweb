@@ -19,20 +19,16 @@ export const headerData = {
       href: '/#portfolio',
     },
     {
-      text: 'Blog',
-      href: '/#blog',
+      text: 'Artikel',
+      href: getBlogPermalink(),
       links: [
         {
-          text: 'Artikel',
-          href: getBlogPermalink(),
+          text: 'Teknologi',
+          href: getPermalink('teknologi', 'category'),
         },
         {
-          text: 'Tutorial',
-          href: getPermalink('tutorials', 'category'),
-        },
-        {
-          text: 'Tag Page',
-          href: getPermalink('astro', 'tag'),
+          text: 'Desain',
+          href: getPermalink('desain', 'category'),
         },
       ],
     },

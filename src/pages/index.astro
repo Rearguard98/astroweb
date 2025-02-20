@@ -6,15 +6,20 @@ import Content from '~/components/widgets/Content.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
-import Profile from '../assets/images/arrosyid.webp';
+import Profile from '~/assets/images/Profile.avif';
+import Hiqma from '~/assets/images/Portfolio-Hiqmauinjakarta.avif';
+import Kargobekasi from '~/assets/images/Portfolio-kargobekasi.avif';
+import Kargojambi from '~/assets/images/Portfolio-kargojambi.avif';
+import Kargopekanbaru from '~/assets/images/Portfolio-kargopekanbaru.avif';
+import { getBlogPermalink, getPermalink } from '~/utils/permalinks';
 
 const metadata = {
-  title: 'Arrosyid Al Ayubi Website',
+  title: 'Beranda',
+  description: 'Halo, Selamat datang di website pribadi saya. Arrosyid Al-Ayubi',
 };
 ---
 
 <Layout metadata={metadata}>
-  <Fragment slot="announcement"></Fragment>
   <Fragment slot="header">
     <Header
       links={[
@@ -22,7 +27,20 @@ const metadata = {
         { text: 'Tentang Saya', href: '#tentang' },
         { text: 'Pengalaman', href: '#pengalaman' },
         { text: 'Portfolio', href: '#portfolio' },
-        { text: 'Blog', href: '#blog' },
+        {
+          text: 'Artikel',
+          href: getBlogPermalink(),
+          links: [
+            {
+              text: 'Teknologi',
+              href: getPermalink('teknologi', 'category'),
+            },
+            {
+              text: 'Desain',
+              href: getPermalink('desain', 'category'),
+            },
+          ],
+        },
       ]}
       isSticky
       showToggleTheme
@@ -57,6 +75,14 @@ const metadata = {
           href: 'https://www.linkedin.com/in/arrosyid-al-ayubi-b02521141/',
         },
       },
+      {
+        icon: 'tabler:brand-github',
+        callToAction: {
+          target: '_blank',
+          text: 'Github',
+          href: 'https://github.com/Rearguard98/',
+        },
+      },
     ]}
     image={{
       src: Profile,
@@ -67,18 +93,18 @@ const metadata = {
     }}
   >
     <Fragment slot="content">
-      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">About me</h2>
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Tentang Saya</h2>
       <p>
-        Welcome to my creative journey. My work is a testament to my commitment to bringing ideas to life, where each
-        pixel becomes a brushstroke in the canvas of imagination.
+        Terima Kasih telah mengunjungi website saya. Perkenalkan saya Arrosyid Al-Ayubi. Telah lama berkecimpung di
+        dunia website berbasis wordpress selama lebih 5 Tahun.
       </p>
       <br />
       <p>
-        I find inspiration in the world around me, whether through the pages of a captivating novel, the intricate
-        details of typography, or the vibrant hues of nature during my outdoor escapades.
+        Saat ini saya sedang fokus dalam mempelajari pengembangan website Full-Stack menggunakan AstroJs, NextJs,
+        ReactJs dan juga Python
       </p>
       <br />
-      <p>If you're curious to dive deeper into my work, you can follow me:</p>
+      <p>Jika Anda ingin mengetahui kabar terbaru dari saya, Anda dapat mengikuti saya di sosial media berikut:</p>
     </Fragment>
 
     <Fragment slot="bg">
@@ -103,85 +129,96 @@ const metadata = {
   />
 
   <Features3
-    title="Skills"
-    subtitle="Temukan keahlian yang memungkinkan saya menghidupkan imajinasi melalui desain."
+    title="Keterampilan"
+    subtitle=""
     columns={3}
     defaultIcon="tabler:point-filled"
     items={[
       {
         title: 'Desain Grafis',
-        description: 'Mahir dalam membuat desain yang menarik secara visual yang menyampaikan pesan secara efektif..',
+        description: 'Mahir dalam membuat desain yang menarik secara visual yang menyampaikan pesan secara efektif.',
+        icon: 'tabler:vector-bezier',
       },
       {
         title: 'Branding and identitas',
-        description: 'Terampil dalam mengembangkan identitas merek yang kohesif, termasuk logo dan pedoman merek..',
+        description: 'Terampil dalam mengembangkan identitas merek yang kohesif, termasuk logo dan pedoman merek.',
+        icon: 'tabler:brand-auth0',
       },
       {
         title: 'Desain yang berpusat pada pengguna',
         description:
           'Berpengalaman dalam menciptakan antarmuka yang ramah pengguna dan mengoptimalkan pengalaman pengguna.',
+        icon: 'tabler:user',
       },
       {
         title: 'Adobe Creative Suite',
         description:
           'Terampil dalam menggunakan Photoshop, Illustrator, dan InDesign untuk membuat dan mengedit elemen visual.',
+        icon: 'tabler:brand-adobe',
       },
       {
         title: 'Tipografi',
         description: 'Mahir dalam memilih dan memanipulasi tipografi untuk meningkatkan estetika desain.',
+        icon: 'tabler:typography',
       },
       {
-        title: 'Teori Warna',
-        description: 'Mahir menggunakan warna untuk membangkitkan emosi dan meningkatkan harmoni visual.',
+        title: 'Pengembangan Wordpress',
+        description: '5 Tahun berpengalaman dalam pembuatan website berbasis wordpress.',
+        icon: 'tabler:brand-wordpress',
       },
       {
         title: 'Desain cetak dan digital',
         description: 'Berpengetahuan luas dalam merancang untuk bahan cetak dan platform digital.',
+        icon: 'tabler:printer',
       },
       {
         title: 'Perhatian terhadap detail',
         description: 'Menjaga ketepatan dan kualitas dalam semua pekerjaan desain.',
+        icon: 'tabler:eye-search',
       },
       {
         title: 'Mudah beradaptasi',
         description: 'Cepat beradaptasi dengan tren desain, teknologi, dan preferensi baru.',
+        icon: 'tabler:transform',
       },
     ]}
   />
 
-  <!-- Content Widget **************** -->
+  <!-- portfolio hiqmauinjakarta **************** -->
 
   <Content
     id="portfolio"
     title="Portfolio"
-    subtitle="Embark on a design journey that surpasses pixels, entering a realm of imagination. Explore my portfolio, where passion and creativity converge to shape enthralling visual narratives."
+    subtitle="Berikut adalah proyek-proyek yang telah saya kerjakan."
     isReversed
     items={[
       {
-        title: 'Description:',
+        title: 'Deskripsi',
         description:
-          'Developed a comprehensive brand identity for a tech startup, Tech Innovators, specializing in disruptive innovations. The goal was to convey a modern yet approachable image that resonated with both corporate clients and tech enthusiasts.',
+          'Pembuatan website Unit Kegiatan Mahasiswa Himpunan Qori dan Qoriah Mahasiswa Universitas Islam Negri Syarif Hidayatullah Jakarta.',
+        icon: 'tabler:file-description',
       },
       {
-        title: 'Role:',
-        description:
-          'Led the entire branding process from concept to execution. Created a dynamic logo that symbolized innovation, selected a vibrant color palette, and I designed corporate stationery, website graphics, and social media assets.',
+        title: 'Klien:',
+        description: 'HIQMA UIN Jakarta',
+        icon: 'tabler:user-star',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1658248165252-71e116af1b34?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=928&q=80',
-      alt: 'Tech Design Image',
+      src: Hiqma,
+      alt: 'Portfolio proyek website HIQMA UIN Jakarta',
+      loading: 'lazy',
     }}
     callToAction={{
       target: '_blank',
-      text: 'Go to the project',
+      text: 'Link Website',
       icon: 'tabler:chevron-right',
-      href: '#',
+      href: 'https://hiqmauinjakarta.com',
     }}
   >
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        Project 1: <br /><span class="text-2xl">Brand identity for tech innovators</span>
+        Proyek 1: <br /><span class="text-2xl">Pembuatan Website HIQMA</span>
       </h3>
     </Fragment>
 
@@ -190,36 +227,39 @@ const metadata = {
     </Fragment>
   </Content>
 
-  <!-- Content Widget **************** -->
+  <!-- portfolio kargopekanbaru **************** -->
 
   <Content
     isReversed
     isAfterContent={true}
     items={[
       {
-        title: 'Description:',
+        title: 'Deskripsi:',
         description:
-          'Designed a captivating event poster for an art and music festival, "ArtWave Fusion," aiming to showcase the synergy between visual art and music genres.',
+          'Manajemen konten dan halaman untuk website kargo pekanbaru yang bergerak di bidang pengiriman kargo barang ke seluruh daerah di Indonesia.',
+        icon: 'tabler:file-description',
       },
       {
-        title: 'Role:',
-        description: `Translated the festival's creative theme into a visually striking poster. Used bold typography, vibrant colors, and abstract elements to depict the fusion of art and music. Ensured the design captured the festival's vibrant atmosphere.`,
+        title: 'Klien:',
+        description: `PT Paket Insan Kargo.`,
+        icon: 'tabler:user-star',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1619983081563-430f63602796?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-      alt: 'Art and Music Poster Image',
+      src: Kargopekanbaru,
+      alt: 'Portfolio Kargopekanbaru',
+      loading: 'lazy',
     }}
     callToAction={{
       target: '_blank',
-      text: 'Go to the project',
+      text: 'Link Website',
       icon: 'tabler:chevron-right',
-      href: '#',
+      href: 'https://kargopekanbaru.com',
     }}
   >
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        Project 2: <br /><span class="text-2xl">Event poster for art & music festival</span>
+        Proyek 2: <br /><span class="text-2xl">Manajemen Halaman Website Kargo Pekanbaru</span>
       </h3>
     </Fragment>
 
@@ -228,35 +268,38 @@ const metadata = {
     </Fragment>
   </Content>
 
-  <!-- Content Widget **************** -->
+  <!-- portfolio kargojambi **************** -->
 
   <Content
     isReversed
     isAfterContent={true}
     items={[
       {
-        title: 'Description:',
-        description: `Redesigned the e-commerce website for an eco-conscious fashion brand, GreenVogue. The objective was to align the brand's online presence with its sustainable ethos and improve user experience.`,
+        title: 'Deskripsi:',
+        description: `Manajemen konten dan halaman untuk website kargo pekanbaru yang bergerak di bidang pengiriman kargo barang ke seluruh daerah di Indonesia.`,
+        icon: 'tabler:file-description',
       },
       {
-        title: 'Role:',
-        description: `Conducted a thorough analysis of the brand's values and customer base to inform the design direction. Created a visually appealing interface with intuitive navigation, highlighting sustainable materials, and integrating a user-friendly shopping experience.`,
+        title: 'Klien:',
+        description: `PT Paket Insan Kargo.`,
+        icon: 'tabler:user-star',
       },
     ]}
     image={{
-      src: 'https://plus.unsplash.com/premium_photo-1683288295841-782fa47e4770?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
-      alt: 'Fashion e-commerce Image',
+      src: Kargojambi,
+      alt: 'Portfolio Kargojambi',
+      loading: 'lazy',
     }}
     callToAction={{
       target: '_blank',
-      text: 'Go to the project',
+      text: 'Lihat Website',
       icon: 'tabler:chevron-right',
-      href: '#',
+      href: 'https://kargojambi.com',
     }}
   >
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        Project 3: <br /><span class="text-2xl">E-commerce website redesign for fashion brand</span>
+        Proyek 3: <br /><span class="text-2xl">Manajemen Halaman Website Kargo Jambi</span>
       </h3>
     </Fragment>
 
@@ -265,9 +308,48 @@ const metadata = {
     </Fragment>
   </Content>
 
-  <!-- BlogLatestPost Widget **************** -->
+  <!-- portfolio kargobekasi **************** -->
+  <Content
+    isReversed
+    isAfterContent={true}
+    items={[
+      {
+        title: 'Deskripsi:',
+        description: `Mendesain ulang halaman untuk website kargo bekasi yang bergerak di bidang pengiriman kargo barang ke seluruh daerah di Indonesia.`,
+        icon: 'tabler:file-description',
+      },
+      {
+        title: 'Klien:',
+        description: `PT Paket Insan Kargo.`,
+        icon: 'tabler:user-star',
+      },
+    ]}
+    image={{
+      src: Kargobekasi,
+      alt: 'Portfolio Kargobekasi',
+      loading: 'lazy',
+    }}
+    callToAction={{
+      target: '_blank',
+      text: 'Lihat Website',
+      icon: 'tabler:chevron-right',
+      href: 'https://kargobekasi.com',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Proyek 4: <br /><span class="text-2xl">Desain Ulang Halaman Website Kargo Bekasi</span>
+      </h3>
+    </Fragment>
 
-  <BlogLatestPosts id="blog" title="Blog" information={`Artikel terbaru saya.`}>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Artikel **************** -->
+
+  <BlogLatestPosts id="blog" title="Artikel" information={`Artikel terbaru saya.`}>
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>

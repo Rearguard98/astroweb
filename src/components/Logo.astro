@@ -1,10 +1,10 @@
 ---
-import Image from '~/components/common/Image.astro'
+import Image from '~/components/common/Image.astro';
 import MyLogo from '~/assets/images/Logo.svg';
 ---
 
 <span
   class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white"
 >
-  <Image src={MyLogo} alt="Logo Arrosyid Al-Ayubi" width={80} height={80} />
+  <Image src={MyLogo} alt="Logo Arrosyid Al-Ayubi" width={80} height={80} loading="eager" decoding="async" />
 </span>
