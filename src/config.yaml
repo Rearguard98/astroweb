@@ -10,13 +10,13 @@ site:
 metadata:
   title:
     default: Arrosyid
-    template: '%s — Arrosyid'
+    template: '%s — Arrosyid.id'
   description: " Personal Website Arrosyid Al-Ayubi."
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: Arrosyid
+    site_name: Arrosyid.id
     images:
       - url: '~/assets/images/default.png'
         width: 1200
@@ -58,7 +58,7 @@ apps:
       isEnabled: true
       pathname: 'topik' # Tag main path /tag/some-tag, you can change this to "topics" (/topics/some-category)
       robots:
-        index: false
+        index: true
 
     isRelatedPostsEnabled: true
     relatedPostsCount: 4

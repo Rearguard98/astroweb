@@ -2,7 +2,7 @@
 
 ###
 
-<p align="left">My name is Arrosyid Al-Ayubi and I'm a Student, from Indonesia</p>
+<p align="left">My name is Arrosyid Al-Ayubi and I'm a Student from Indonesia</p>
 
 ###
 
